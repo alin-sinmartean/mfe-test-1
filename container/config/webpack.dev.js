@@ -1,5 +1,4 @@
 const { merge } = require('webpack-merge'); // practic ne lasa sa facem merge la configurile de webpack, dintre webpack.common si webpack.dev
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./webpack.common');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const packageJson = require("../package.json");
@@ -13,9 +12,6 @@ const devConfig = {
     }
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html'
-    }),
     new ModuleFederationPlugin({
       name: 'container', // asta nu e folosit in mod direct, dar e bine sa fie setat
       remotes: {
