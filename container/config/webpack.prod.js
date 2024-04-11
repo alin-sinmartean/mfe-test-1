@@ -9,6 +9,7 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js', // asta cica o sa fie formatul fisierelor builduite. Pt caching issues
+    publicPath: '/container/latest/' // asta cica o s-o folosim super mult in mfe apps. Ca si cum setam un basePath de unde sa ia fisierele. Practic ia fisierele din s3 bucket din /container/latest 
   },
   plugins: [
     new ModuleFederationPlugin({
