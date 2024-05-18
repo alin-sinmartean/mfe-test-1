@@ -5,6 +5,7 @@ import App from './App';
 
 // Mount function to start up the app
 const mount = (el, data) => {
+  console.log('ell', el)
   console.log("dataa", data)
   const { onNavigate, defaultHistory, initialPath } = data;
   const history = defaultHistory || createMemoryHistory({
